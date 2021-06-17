@@ -20,23 +20,14 @@ h1 {
 }
 
 section {
+  width: 900px;
+  margin: auto;
   display: flex;
-}
-
-.left {
-  width: 200px;
-}
-
-.right {
-  width: 200px;
-}
-
-.main {
-  flex: 1;
 }
 
 article {
   padding: 10px;
   margin: 10px;
+  width: 300px;
   background: #bcbcbc;
 }
