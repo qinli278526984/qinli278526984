@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'VT323', monospace;
+  }
+  
+  *::selection {
+    background: rgba(127, 140, 141, 0.6);
+  }
+  
+  html {
+    width: 100%;
+    height: 60%;
+  }
+  
+  body {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #ffebc5;
+  }
+
+.face {
+    display: block;
+    margin: 10px auto;
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size:100%; 
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#id-div-mine {
+    margin: 0 auto;
+}
+
+.flag {
+    background-image: url('flag.png');
+    background-repeat: no-repeat;
+    background-size:100%; 
+}
+
+table {
+    margin: 1px auto;
+    border: 2px solid rgb(193, 172, 166);
+    border-collapse: collapse;
+}
+
+td {
+    background-color: rgb(205, 186, 182);
+    /* margin: 1px; */
+    width:  80px;
+    height: 80px;
+    display: inline-block;
+    text-align: center;
+    font-size: 00px;
+    border: 2px solid #c1aca6;
+    color: white;
+}
+.opened {
+    font-size: 50px;
+}
+[data-number = '2'] {
+    background-color: #e8d8d3;
+    font-size: 50px;
+    color: black;
+}
+
+[data-number = '4'] {
+    background-color: rgb(232, 214, 199);
+    font-size: 50px;
+    color: black;
+}
+
+[data-number = '8'] {
+    background-color: rgb(239, 180, 138);
+    font-size: 50px;
+}
+
+[data-number = '16'] {
+    background-color: rgb(239, 180, 138);
+    font-size: 50px;
+}
+
+[data-number = '32'] {
+    background-color: rgb(242, 146, 119);
+    font-size: 50px;
+}
+
+[data-number = '64'] {
+    background-color: rgb(245, 126, 91);
+    font-size: 50px;
+}
+
+[data-number = '128'] {
+    background-color: rgb(233, 199, 133);
+    font-size: 50px;
+}
+
+[data-number = '256'] {
+    background-color: rgb(234, 197, 120);
+    font-size: 50px;
+}
+
+[data-number = '512'] {
+    background-color: rgb(233, 192, 107);
+    font-size: 50px;
+}
+
+[data-number = '1024'] {
+    background-color: rgb(233, 189, 91);
+    font-size: 30px;
+}
+
+[data-number = '2048'] {
+    background-color: rgb(233, 189, 91);
+    font-size: 30px;
+}
+
+#arrow {
+    width:  80px;
+    height: 80px;
+    margin: 5px auto;
+    background-color: #c1aca6;
+}
+.up {
+    background-image: url('up.png');
+    background-repeat: no-repeat;
+    background-size: 80px 80px;
+}
+.down {
+    background-image: url('down.png');
+    background-repeat: no-repeat;
+    background-size: 80px 80px;
+}
+.left {
+    background-image: url('left.png');
+    background-repeat: no-repeat;
+    background-size: 80px 80px;
+}
+.right {
+    background-image: url('right.png');
+    background-repeat: no-repeat;
+    background-size: 80px 80px;
+}
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>贪吃蛇</title>
+    </head>
+        <!-- game 相关文件 -->
+        <link rel="stylesheet" href="game.css">
+        <script src="game/utils.js"></script>
+        <script src="game/game.js"></script>
+        <script src="game/GameScene.js"></script>
+        <script src="game/game_image.js"></script>
+        <script src="game/particle_system.js"></script>
+        <script src="game/game_label.js"></script>
+        <script src="game/game_animation.js"></script>
+        <!-- scene 相关文件 -->
+        <script src="scene/main/paddle.js"></script>
+        <script src="scene/main/ball.js"></script>
+        <script src="scene/main/block.js"></script>
+        <script src="scene/main/scene.js"></script>
+        <script src="scene/title/scene_title.js"></script>
+        <script src="scene/end/scene_end.js"></script>
+        <!-- 配置 相关文件 -->
+        <script src="config.js"></script>
+        <!-- 结束和标题 相关文件 -->
+        <!-- <script src="scene/end/scene_end.js"></script>
+        <script src="scene/title/scene_title.js"></script> -->
+        <!-- 关卡 相关文件 -->
+        <script src="levels.js"></script>
+    <body>
+        <canvas id="canvas" width="500" height="700"></canvas>
+        <hr>
+        <input id="id-input-fps" type="range" value="1"><span class="fps">FPS:</span>
+        <div id="game-controls">
+        </div>
+    </body>
+    <script src="main.js"></script>
+    <script>
+        const controlHtml = function(key, item) {
+            let t = `
+            <div class="">
+                <label for="">
+                    <input class="auto-slider" type="range" 
+                        value="${item.value}"
+                        min = 0
+                        max = 300
+                        data-value="config.${key}"
+                        >
+                    ${item.name}：<span class="game-label"></span>
+                </label>
+            </div>
+            `
+            return t
+        }
+
+        const insertControls = function() {
+            let keys = Object.keys(config)
+            for (let key of keys) {
+                let item = config[key]
+                let html = controlHtml(key, item)
+                let d = e('#game-controls')
+                d.insertAdjacentHTML('beforeend', html)
+            }
+        }
+        const _main = function() {
+            insertControls()
+            bindAll('.auto-slider', 'input', event => {
+            let self = event.target
+            let bindValue = self.dataset.value
+            let v = self.value
+            eval(bindValue + '.value=' + v)
+            //
+            let label = self.closest('label').querySelector('.game-label')
+            label.innerText = v
+        })
+        let m = e('#id-input-fps')
+        m.addEventListener('input', e => {
+        var self = e.target
+        window.fps = Number(self.value)
+        let fp = e('.fps')
+        fp.innerHTML = `FPS:${window.fps}`
+        if (window.fps === 0) {
+            window.paused = true
+        } else {
+            window.paused = false
+        }
+    })
+        }
+        _main()
+    </script>
+</html>
